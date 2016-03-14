@@ -5,16 +5,16 @@
 using std::string;
 using std::stringstream;
 
-Student::Student(string name, string id, int age, string sid, string major, double avg, int uv):Person(name, id, age),
-	major(major), id(sid), avg(avg), uv(uv){
+Student::Student(string name, string id, int age, string sid, string major, double gpa, int uv):Person(name, id, age),
+	major(major), id(sid), gpa(gpa), uv(uv){
 }
-Student::Student(const Student& s):Person(s), major(s.major), id(s.sid), avg(s.avg), uv(s.uv){
+Student::Student(const Student& s):Person(s), major(s.major), id(s.id), gpa(s.gpa), uv(s.uv){
 }
 Student::~Student(){
 }
 string Student::toString()const{
 	stringstream ss;
-	ss << "Student: " << id << ", " << major << ", " << avg << ", " << uv;
+	ss << "Student: " << id << ", " << major << ", " << gpa << ", " << uv;
 	return ss.str();
 }
 void Student::addGrade(double grade, int guv){
