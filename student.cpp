@@ -14,7 +14,7 @@ Student::~Student(){
 }
 string Student::toString()const{
 	stringstream ss;
-	ss << "Student: " << id << ", " << major << ", " << gpa << ", " << uv;
+	ss << Person::toString() << " Student: " << id << ", " << major << ", " << gpa << ", " << uv;
 	return ss.str();
 }
 void Student::addGrade(double grade, int guv){
