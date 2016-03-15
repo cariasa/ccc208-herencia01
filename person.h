@@ -9,7 +9,7 @@ class Person{
   public:
 	Person(string, string, int=0);
 	Person(const Person&);
-	~Person();
+	virtual ~Person();
 	string toString()const;
 	bool operator==(const Person&)const;
 	bool operator!=(const Person&)const;

@@ -8,17 +8,22 @@ using std::endl;
 void unafuncion(const Person&);
 
 int main(int argc, char* argv[]){
-	Person a("Daniela", "0101-1986-12571");
-	Student b("Ana", "0201-1990-00041", 26, "11211066");
-	cout << a.toString() << endl;
-	cout << b.toString() << endl;
-	b.addGrade(95,3);
-	b.addGrade(80,4);
-	b.addGrade(100,1);
-	unafuncion(a);
-	unafuncion(b);
+	Person* array[3];
+	array[0] = new Person("Isabel", "0801-1980-00012");
+	array[1] = new Student("Mariana", "0801-1988-01012", 18, "11011112");
+	array[2] = new Person("Pedro", "0801-1977-00112");
 
+	for (int i=0; i<3; i++){
+		if (dynamic_cast<Student*>(array[i]) != NULL){
+			Student* student = dynamic_cast<Student*>(array[i]);
+			cout << student->toString() << endl;
+		}else
+			cout << array[i]->toString() << endl;
+	}
 
+	for (int i=0; i<3; i++){
+		delete array[i];
+	}
 	return 0;
 }
 void unafuncion(const Person& p){
